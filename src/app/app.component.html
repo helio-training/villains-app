@@ -1,1 +1,38 @@
-<router-outlet></router-outlet>
+<!--<md-toolbar layout="row">-->
+<!--<h1>App</h1>-->
+<!--</md-toolbar>-->
+
+<!--<article class="flex-container" fxLayout="row" fxLayoutAlign="start center">-->
+
+<!--<md-sidenav md-is-locked-open="$mdMedia('gt-sm')" md-component-id="left">-->
+<!--side nav-->
+<!--</md-sidenav>-->
+
+
+<!--&lt;!&ndash;<section fxFlex="20">Side Navigation</section>&ndash;&gt;-->
+<!---->
+<!--</article>-->
+
+
+<md-sidenav-container>
+  <md-sidenav mode="side" #leftNavigation>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+  </md-sidenav>
+  <md-toolbar>
+    <button md-icon-button (click)="leftNavigation.opened = !(leftNavigation.opened)">
+      <md-icon>menu</md-icon>
+    </button>
+    <span class="spacer"></span>
+    <span>Villain's Application</span>
+  </md-toolbar>
+  <section>
+
+    <router-outlet></router-outlet>
+  </section>
+</md-sidenav-container>
