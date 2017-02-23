@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { LoggerService } from '../../../services/common/logger.service';
 
 @Component({
   templateUrl: './villain-delete-page.component.html',
@@ -7,12 +8,15 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class VillainDeletePageComponent implements OnInit {
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute, private loggerService: LoggerService) { }
 
   ngOnInit() {
     const id = +this.route.snapshot.params['id'];
+    this.loggerService.info(id);
+
+
     if(!id) {
-      this.router.navigate(['/404'])
+      this.router.navigateByUrl('/not-found');
     }
   }
 

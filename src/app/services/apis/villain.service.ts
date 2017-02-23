@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { LoggerService } from '../common/logger.service';
+import { Http } from '@angular/http';
 
 
 @Injectable()
 export class VillainService {
 
-  constructor(private logger: LoggerService) {
+  constructor(private http: Http, private logger: LoggerService) {
   }
 
   getVillains() {
@@ -17,7 +18,7 @@ export class VillainService {
       { id: 3, name: `Ex's` },
     ];
 
-    this.logger.info(villains);
+    // this.logger.info(villains);
 
 
     return villains;

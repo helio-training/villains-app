@@ -28,8 +28,7 @@ import AppRoutes, { Components } from './app.routes';
     FlexLayoutModule,
     RouterModule.forRoot(AppRoutes)
   ],
-  providers: [...Services],
+  providers: Services,
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }
