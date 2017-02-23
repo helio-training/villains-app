@@ -9,34 +9,26 @@ import { RouterModule } from "@angular/router";
 import { MaterialModule } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-import { VillainsService } from './villains.service';
-import { ErrorsService } from './errors.service';
-
-import { VillainsListPageComponent } from './pages/villains/villains-list-page/villains-list-page.component';
+import Services from './app.services';
 
 import 'hammerjs';
 
+import AppRoutes, { Components } from './app.routes';
+
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    VillainsListPageComponent
-  ],
+
+  declarations: [AppComponent, ...Components],
+
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     MaterialModule,
     FlexLayoutModule,
-    RouterModule.forRoot([
-      { path: 'villains', component: VillainsListPageComponent },
-      {
-        path: '',
-        redirectTo: '/villains',
-        pathMatch: 'full'
-      },
-    ])
+    RouterModule.forRoot(AppRoutes)
   ],
-  providers: [VillainsService, ErrorsService],
+  providers: [...Services],
   bootstrap: [AppComponent]
 })
 export class AppModule {
