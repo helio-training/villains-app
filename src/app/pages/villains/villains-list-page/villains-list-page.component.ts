@@ -11,11 +11,16 @@ export class VillainsListPageComponent implements OnInit {
 
   villains: any;
 
-  constructor(protected villianService: VillainService) { }
+  constructor(protected villainService: VillainService) { }
 
   // Loading up me data... Beep boop beep
   ngOnInit() {
-    this.villains = this.villianService.getVillains();
+    this.villainService.getVillains()
+      .subscribe(villains => {
+        this.villains = villains;
+      }, err => {
+        console.error(err);
+      });
   }
 
 }

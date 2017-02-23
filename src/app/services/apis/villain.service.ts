@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { LoggerService } from '../common/logger.service';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
+import { Observable } from 'rxjs';
+
+const ENDPOINT = 'https://villains-api.herokuapp.com/v1/villains';
 
 
 @Injectable()
@@ -9,19 +12,9 @@ export class VillainService {
   constructor(private http: Http, private logger: LoggerService) {
   }
 
-  getVillains() {
-
-    // TODO: Change to call our API
-    const villains = [
-      { id: 1, name: 'Magneto' },
-      { id: 2, name: 'Lawyers' },
-      { id: 3, name: `Ex's` },
-    ];
-
-    // this.logger.info(villains);
-
-
-    return villains;
+  getVillains(): Observable<any[]> {
+    return this.http.get(ENDPOINT)
+      .map((response: Response) => response.json());
   }
 
   getVillain(id) {
