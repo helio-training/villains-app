@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { VillainsService } from '../../../villains.service';
+import { VillainService } from '../../../services/apis/villain.service';
+
 
 @Component({
   selector: 'app-villains-list-page',
@@ -10,11 +11,11 @@ export class VillainsListPageComponent implements OnInit {
 
   villains: any;
 
-  constructor(protected villainsService: VillainsService) { }
+  constructor(protected villianService: VillainService) { }
 
   // Loading up me data... Beep boop beep
   ngOnInit() {
-    this.villains = this.villainsService.getVillains();
+    this.villains = this.villianService.getVillains();
   }
 
 }

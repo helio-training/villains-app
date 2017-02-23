@@ -1,7 +1,8 @@
-import { VillainsService } from './villains.service';
-import { ErrorsService } from './errors.service';
+import { LoggerService } from './services/common/logger.service';
+import { VillainService } from './services/apis/villain.service';
+
 
 export default [
-  VillainsService,
-  ErrorsService
+  LoggerService,
+  VillainService
 ]

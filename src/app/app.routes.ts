@@ -9,9 +9,6 @@ import { PageNotFoundComponent } from './pages/common/page-not-found/page-not-fo
 
 const AppRoutes: Routes = [
   { path: 'villains', component: VillainsListPageComponent },
-
-  // /villains/how-many-brews-can-a-brew-brah-brah-if-a-brew-brah-could-brew-brew -> /villains/:id -> id: 'new'
-
   { path: 'villains/new', component: VillainCreatePageComponent },
   { path: 'villains/edit/:id', component: VillainUpdatePageComponent },
   { path: 'villains/delete/:id', component: VillainDeletePageComponent },

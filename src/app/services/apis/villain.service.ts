@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { ErrorsService } from './errors.service';
+import { LoggerService } from '../common/logger.service';
+
 
 @Injectable()
-export class VillainsService {
+export class VillainService {
 
-  constructor(private errorsService:ErrorsService) {
-
+  constructor(private logger: LoggerService) {
   }
 
   getVillains() {
@@ -17,13 +17,13 @@ export class VillainsService {
       { id: 3, name: `Ex's` },
     ];
 
-    this.errorsService.log(villains);
+    this.logger.info(villains);
+
+
     return villains;
   }
 
   getVillain(id) {
     return {}
   }
-
 }
-// this.villains = villainsService.getVillains();

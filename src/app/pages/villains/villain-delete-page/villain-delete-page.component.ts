@@ -11,7 +11,9 @@ export class VillainDeletePageComponent implements OnInit {
 
   ngOnInit() {
     const id = +this.route.snapshot.params['id'];
-    console.log(id);
+    if(!id) {
+      this.router.navigate(['/404'])
+    }
   }
 
 }
