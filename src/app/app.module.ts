@@ -14,11 +14,12 @@ import Services from './app.services';
 import 'hammerjs';
 
 import AppRoutes, { Components } from './app.routes';
+import { VillainFormComponent } from './villians/villain-form/villain-form.component';
 
 
 @NgModule({
 
-  declarations: [AppComponent, ...Components],
+  declarations: [AppComponent, ...Components, VillainFormComponent],
 
   imports: [
     BrowserModule,
