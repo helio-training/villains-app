@@ -14,9 +14,7 @@
     <span [hidden]="kind.valid || kind.pristine">Kind is required</span>
   </fieldset>
   <fieldset>
-    <label for="nicknames">Nicknames</label>
-    <villain-nicknames id="nicknames" [nicknames]="villain.nicknames">
-    </villain-nicknames>
+    <villain-nicknames [nicknames]="villain.nicknames"></villain-nicknames>
   </fieldset>
   <section>
     <button type="submit" [disabled]="!form.valid">Save</button>

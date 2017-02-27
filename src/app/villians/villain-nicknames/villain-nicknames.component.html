@@ -1,4 +1,14 @@
-<input type="text" [(ngModel)]="nickname"><span><button>+</button></span>
-<ul>
-  <li *ngFor="let nickname of nicknames">{{ nickname }} <button>X</button></li>
-</ul>
+<h4>Nicknames</h4>
+<fieldset>
+  <form (submit)="added(nickname)">
+    <input type="text" [(ngModel)]="nickname" name="nickname">
+    <span><button type="submit">+</button></span>
+  </form>
+</fieldset>
+<fieldset>
+  <ul>
+    <li *ngFor="let nickname of nicknames;  let i = index;">{{ nickname }}
+      <strong (click)="remove(nickname, i)">X</strong>
+    </li>
+  </ul>
+</fieldset>

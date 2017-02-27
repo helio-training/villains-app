@@ -9,15 +9,19 @@ export class VillainNicknamesComponent implements OnInit {
 
   @Input() nicknames: any[];
 
-  nickname:any = '';
-
-  constructor() {
-
-  }
+  nickname: string = '';
 
   ngOnInit() {
-    this.nicknames = ['Bro', 'Bruh'];
-    console.log(this.nicknames);
   }
 
+  added(nickname) {
+    if(this.nickname) {
+      this.nicknames = [...this.nicknames, nickname];
+      this.nickname = '';
+    }
+  }
+
+  remove(nickname, index) {
+    this.nicknames.splice(index, 1);
+  }
 }
