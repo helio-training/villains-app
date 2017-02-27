@@ -2,7 +2,7 @@
 
   <fieldset>
     <label for="name">Name</label>
-    <input type="text" [(ngModel)]="villain.name" id="name" name="name" required  #name="ngModel">
+    <input type="text" [(ngModel)]="villain.name" id="name" name="name" required #name="ngModel">
     <span [hidden]="name.valid || name.pristine">Name is required</span>
   </fieldset>
 
@@ -13,7 +13,11 @@
     </select>
     <span [hidden]="kind.valid || kind.pristine">Kind is required</span>
   </fieldset>
-
+  <fieldset>
+    <label for="nicknames">Nicknames</label>
+    <villain-nicknames id="nicknames" [nicknames]="villain.nicknames">
+    </villain-nicknames>
+  </fieldset>
   <section>
     <button type="submit" [disabled]="!form.valid">Save</button>
   </section>

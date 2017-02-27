@@ -15,11 +15,12 @@ import 'hammerjs';
 
 import AppRoutes, { Components } from './app.routes';
 import { VillainFormComponent } from './villians/villain-form/villain-form.component';
+import { VillainNicknamesComponent } from './villians/villain-nicknames/villain-nicknames.component';
 
 
 @NgModule({
 
-  declarations: [AppComponent, ...Components, VillainFormComponent],
+  declarations: [AppComponent, ...Components, VillainFormComponent, VillainNicknamesComponent],
 
   imports: [
     BrowserModule,
@@ -32,4 +33,5 @@ import { VillainFormComponent } from './villians/villain-form/villain-form.compo
   providers: Services,
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

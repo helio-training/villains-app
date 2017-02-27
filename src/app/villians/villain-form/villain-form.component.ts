@@ -33,11 +33,12 @@ export class VillainFormComponent {
 // }
 
 
-
   constructor() {
     if (!this.villain) {
       this.villain = {};
     }
+
+    this.villain.nicknames = [];
   }
 
 
@@ -45,7 +46,6 @@ export class VillainFormComponent {
     // Write some additional validation if necessary
     this.valid.emit(villain);
   }
-
 
 
 }

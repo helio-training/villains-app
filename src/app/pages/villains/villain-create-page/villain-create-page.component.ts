@@ -8,9 +8,7 @@ export class VillainCreatePageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-
-  }
+  ngOnInit() { }
 
   onValid(villain){
     console.log(villain);
